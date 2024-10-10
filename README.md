@@ -1,24 +1,47 @@
-
 # Audio Sentiment Classifier
 
-This project implements an **Audio Sentiment Classifier** utilizing state-of-the-art models from the **Hugging Face Transformers** library. The classifier is designed to analyze audio inputs and accurately predict the sentiment conveyed within them.
+## Project Overview
+
+This project is an **Audio Sentiment Classifier** that leverages advanced natural language processing and audio processing techniques to analyze the sentiment of spoken audio. The application utilizes fine-tuned models from Hugging Face Transformers, specifically the Wav2Vec2 model for speech recognition and DistilBERT for sentiment classification.
 
 ## Key Features
 
-- **Audio Analysis:** The model processes audio files to extract features relevant to sentiment analysis.
-- **Transformers Architecture:** Leveraging pre-trained transformer models, including **Wav2Vec2**, **HuBERT**, and **BERT**, the classifier benefits from advanced techniques in natural language processing and audio signal processing.
-- **Customizable Training:** Users can fine-tune the model on their specific audio datasets to improve performance and adapt to various sentiment classification tasks.
-- **Interactive Gradio Interface:** The project includes a user-friendly interface built with **Gradio**, allowing users to easily upload audio files and visualize sentiment predictions in real-time. This interface enhances accessibility and provides a seamless user experience.
+- **Model Loading**: The application loads fine-tuned models:
+  - **Wav2Vec2** for converting audio to text.
+  - **DistilBERT** for determining the sentiment of the transcribed text.
 
-## Getting Started
+- **Audio Processing Pipeline**:
+  - **Speech-to-Text Conversion**: Converts recorded audio into textual representation.
+  - **Sentiment Analysis**: Classifies the sentiment of the transcribed text as either "Positive" or "Negative."
 
-1. **Installation:** Ensure that you have the necessary libraries installed, including `transformers`, `torch`, and `librosa` for audio processing, as well as `gradio` for the interface.
-2. **Data Preparation:** Prepare your audio dataset in the required format for input into the model.
-3. **Model Training:** Follow the provided scripts to train the model on your dataset, adjusting parameters as needed.
-4. **Inference:** Use the trained model to predict sentiments on new audio samples.
-5. **Launch Gradio Interface:** Run the Gradio interface to interactively upload audio files and view sentiment predictions.
+- **Feature Extraction**: Extracts audio features, including pitch, tempo, and spectral centroid using the **Librosa** library, providing additional insights into audio characteristics.
 
-## Acknowledgments
+- **Error Handling and Logging**: Implements robust error handling and logging mechanisms to track model loading, audio processing, and feature extraction, ensuring smooth application performance.
 
-- This project utilizes the **Hugging Face Transformers** library for leveraging cutting-edge NLP techniques.
-  
+- **Gradio Interface**:
+  - An interactive user interface allows users to record audio directly from the browser.
+  - Displays the results, including:
+    - Transcription of the speech.
+    - Sentiment classification.
+    - Extracted audio features (pitch, tempo, tone).
+
+## User Experience
+
+The application is designed for ease of use, allowing users to perform audio sentiment analysis quickly. Users can record audio through the Gradio interface, which provides clear labels for each output, enhancing understanding of the results.
+
+## Current Progress
+
+As of now, the **Audio Sentiment Classifier** is fully functional with real-time audio processing and analysis capabilities. The next steps will involve further fine-tuning of the models to improve performance and accuracy, as well as potential enhancements to the user interface based on feedback.
+
+## Requirements
+
+To run this project, you'll need the following libraries:
+- `torch`
+- `transformers`
+- `librosa`
+- `gradio`
+
+You can install the required libraries using pip:
+
+```bash
+pip install torch transformers librosa gradio
