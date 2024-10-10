@@ -2,13 +2,13 @@
 
 ## Project Overview
 
-This project is an **Audio Sentiment Classifier** that leverages advanced natural language processing and audio processing techniques to analyze the sentiment of spoken audio. The application utilizes fine-tuned models from Hugging Face Transformers, specifically the Wav2Vec2 model for speech recognition and DistilBERT for sentiment classification.
+This project is an **Audio Sentiment Classifier** that leverages advanced natural language processing and audio processing techniques to analyze the sentiment of spoken audio. The application utilizes fine-tuned models from Hugging Face Transformers, specifically the Wav2Vec2 model for speech recognition and DistilBERT or RoBERTa for sentiment classification.
 
 ## Key Features
 
 - **Model Loading**: The application loads fine-tuned models:
   - **Wav2Vec2** for converting audio to text.
-  - **DistilBERT** for determining the sentiment of the transcribed text.
+  - **DistilBERT or RoBERTa** for determining the sentiment of the transcribed text.
 
 - **Audio Processing Pipeline**:
   - **Speech-to-Text Conversion**: Converts recorded audio into textual representation.
